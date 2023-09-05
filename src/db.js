@@ -18,9 +18,8 @@ const BodaModel = require('./models/Bodas')
 const sequelize = new Sequelize(`${DATABASE}`,`${DB_USER}`,`${DB_PASSWORD}`,{
   host: `${DB_HOST}`,
   dialect:'mysql',
-  
   dialectOptions: {
-    connectTimeout:100000
+    // connectTimeout:100000
   },
   // define: {
   //   timestamps: false
