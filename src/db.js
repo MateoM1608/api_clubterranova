@@ -21,6 +21,7 @@ const sequelize = new Sequelize(`${DATABASE}`,`${DB_USER}`,`${DB_PASSWORD}`,{
   logging: console.log,
   maxConcurrentQueries: 100,
   dialect: 'mysql',
+  dialectModule: require('mysql2'),
   ssl:'Amazon RDS',
   pool: { maxConnections: 5, maxIdleTime: 30},
   language: 'en'
