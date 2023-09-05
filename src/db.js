@@ -17,18 +17,13 @@ const BodaModel = require('./models/Bodas')
 //Definimos los parametros de conexion de la base de datos
 const sequelize = new Sequelize(`${DATABASE}`,`${DB_USER}`,`${DB_PASSWORD}`,{
   host: `${DB_HOST}`,
-  dialect:'mysql',
-  dialectOptions: {
-    // connectTimeout:100000
-  },
-  // define: {
-  //   timestamps: false
-  // },
-  // pool: {
-  //   max: 25,
-  //   min: 0,
-  //   idle: 10000
-  // },
+  port: 3306,
+  logging: console.log,
+  maxConcurrentQueries: 100,
+  dialect: 'mysql',
+  ssl:'Amazon RDS',
+  pool: { maxConnections: 5, maxIdleTime: 30},
+  language: 'en'
 })
 
 const Venta = VentaModel(sequelize, Sequelize);
